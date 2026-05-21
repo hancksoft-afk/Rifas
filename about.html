@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="CSS/style.css">
+
+    <!-- ICONO -->
+    <link rel="icon" type="image/jpg" href="img/Rifadib.png">
+
+    <!-- FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <!-- SWEETALERT -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- SHEET BEST -->
+    <script src="https://sbt.0soft.dev/sheet-best-templates.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <!-- ANIME -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+    <title>Rifas de Boyacá</title>
+
+</head>
+
+<body>
+    <div class="success-loader" id="successLoader">
+
+        <div class="loader"></div>
+
+        <p>
+            Guardando información...
+        </p>
+
+    </div>
+
+
+    <section id="hero">
+
+        <!-- VIDEO -->
+        <video autoplay muted loop id="video-bg">
+            <source src="img/215697_small.mp4" type="video/mp4">
+        </video>
+
+        <!-- CONTENEDOR -->
+        <div class="container">
+
+            <!-- HEADER -->
+            <header class="hdr">
+
+                <div class="logo">
+                    <img src="img/Rifadib.png" id="loteria" alt="Logo">
+                </div>
+
+            </header>
+
+            <!-- TITULO -->
+            <div class="header">
+
+                <h1>¡Rifa de Boyacá!</h1>
+
+                <p>
+                    Selecciona tus números de la suerte y participa para ganar una canasta Rifa.
+                </p>
+
+            </div>
+
+            <!-- BOTONES -->
+            <div class="buttons">
+
+                <button id="registerBtn" disabled>
+                    Aceptar y Registrar
+                </button>
+
+                <button class="btn sub-btn" onclick="document.location='index.html'">
+                    Cerrar
+                </button>
+
+            </div>
+
+            <!-- OPCIONES -->
+            <div class="options">
+
+                <label for="selectionOption">
+                    Selecciona una opción:
+                </label>
+
+                <select id="selectionOption">
+
+                    <option value="" disabled selected>
+                        Elige una opción
+                    </option>
+
+                    <option value="1">
+                        X1 - $5.000 (1 número)
+                    </option>
+
+                    <option value="2">
+                        X2 - $10.000 (2 números)
+                    </option>
+
+                    <option value="3">
+                        X3 - $15.000 (3 números)
+                    </option>
+
+                    <option value="4">
+                        X4 - $20.000 (4 números)
+                    </option>
+
+                    <option value="5">
+                        X5 - $25.000 (5 números)
+                    </option>
+
+                </select>
+
+            </div>
+
+            <!-- NUMEROS -->
+            <div class="numbers-container" id="numbersContainer"></div>
+
+        </div>
+
+
+
+        <!-- ======================================= -->
+        <!-- MODAL 1 -->
+        <!-- ======================================= -->
+
+        <div id="modal" class="modal">
+
+            <div class="modal-content">
+
+                <h2>Registrar tus números</h2>
+
+                <p id="modalSelectedNumbers"></p>
+
+                <p id="modalTotalValue"></p>
+
+                <form id="modalForm">
+
+                    <!-- NOMBRES -->
+                    <label for="Nombres">
+                        Nombres:
+                    </label>
+
+                    <input type="text" id="Nombres" name="Nombres" placeholder="Ingresa tu nombre" required>
+
+                    <!-- APELLIDO -->
+                    <label for="Apellido">
+                        Apellido:
+                    </label>
+
+                    <input type="text" id="Apellido" name="Apellido" placeholder="Ingresa tu apellido" required>
+
+                    <!-- CIUDAD -->
+                    <label for="Ciudad">
+                        Ciudad:
+                    </label>
+
+                    <input type="text" id="Ciudad" name="Ciudad" placeholder="Ingresa tu ciudad" required>
+
+                    <!-- PAIS -->
+                    <label for="País">
+                        País:
+                    </label>
+
+                    <input type="text" id="País" name="País" placeholder="Ingresa tu país" required>
+
+                    <!-- RESPONSABLE -->
+                    <div class="input-box">
+
+                        <label for="Nombre_de_responsable">
+                            Nombre de Responsable
+                        </label>
+
+                        <select id="Nombre_de_responsable" required>
+
+                            <option value="">
+                                Seleccione un responsable
+                            </option>
+
+                            <option value="Margarita">
+                                Margarita
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- CELULAR -->
+                    <div class="input-box">
+
+                        <label for="Celular_de_responsable">
+                            Celular de Responsable
+                        </label>
+
+                        <select id="Celular_de_responsable" required>
+
+                            <option value="">
+                                Seleccione un celular
+                            </option>
+
+                            <option value="3142095181">
+                                3142095181
+                            </option>
+
+                            <option value="59898862936">
+                                598 98 862 936
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- PREMIO -->
+                    <div class="input-box">
+
+                        <label for="Premio">
+                            Premio:
+                        </label>
+
+                        <select id="Premio" required>
+
+                            <option value="">
+                                Seleccione un premio
+                            </option>
+
+                            <option value="Cifras : $ 1,000.000">
+                                Cifras : $ 1,000.000
+                            </option>
+
+                            <option value="Series : $ 500.000">
+                                Series : $ 500.000
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- TEXTO -->
+                    <div class="Fin">
+
+                        <p>
+                            Juega con la Rifa de Boyacá
+                        </p>
+
+                        <p>
+                            El 5 de abril del 2025
+                        </p>
+
+                    </div>
+
+                    <!-- BOTONES -->
+                    <div class="modal-buttons">
+
+                        <button class="confirm" type="submit">
+                            Confirmar
+                        </button>
+
+                        <button class="cancel" type="button" onclick="document.location='about.html'">
+                            Cancelar
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ======================================= -->
+        <!-- MODAL 2 QR -->
+        <!-- ======================================= -->
+
+        <div id="paymentModal" class="modal">
+
+            <div class="modal-content payment-content">
+
+                <h2>Pago QR</h2>
+
+                <!-- LOGO -->
+                <img src="img/Rifadib.png" alt="Logo" class="logo-payment">
+
+                <!-- QR -->
+                <img src="img/code1281.jpg" alt="QR Pago" class="qr-payment">
+
+                <p class="text-payment">
+                    Escanea el código QR y envía tu referencia de pago
+                </p>
+
+
+                <p id="paymentTotalValue"></p>
+
+                <div class="timer-box">
+
+                    <p class="timer-title">
+                        Tiempo restante para pagar
+                    </p>
+
+                    <div id="paymentTimer">
+                        05:00
+                    </div>
+
+                </div>
+
+                <!-- FORM -->
+                <form id="paymentForm">
+
+                    <!-- REFERENCIA -->
+                    <label for="referencia">
+                        Referencia de pago
+                    </label>
+
+                    <input type="text" id="referencia" name="referencia" placeholder="ABC12345" minlength="8"
+                        maxlength="12" required>
+
+                    <small>
+                        Solo letras y números (8 a 12 caracteres)
+                    </small>
+
+                    <!-- BOTONES -->
+                    <div class="modal-buttons">
+
+                        <button type="submit" class="confirm">
+                            Enviar Referencia
+                        </button>
+
+                        <button type="button" class="cancel" id="closePaymentModal">
+                            Cerrar
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+
+    </section>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="java.js"></script>
+
+</body>
+
+</html>

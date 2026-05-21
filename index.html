@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="CSS/styles.css">
+  <link rel="icon" type="image/jpg" href="img/niñaso.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,647&family=Pacifico&display=swap"
+    rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+  <title>Rifas de Boyacá</title>
+</head>
+
+<body>
+  <!-- ======================================= -->
+  <!-- PRELOADER -->
+  <!-- ======================================= -->
+
+  <div id="preloader">
+
+    <div class="loader-ring"></div>
+
+    <h2 class="loading-text">
+      Rifas de Boyacá
+    </h2>
+
+  </div>
+
+  <header class="hdr">
+    <div class="logo">
+      <img id="loteria" src="img/niñaso.png" alt="">
+    </div>
+  </header>
+
+  <h1 class="ml5">
+    <span class="text-wrapper">
+      <span class="line line1"></span>
+      <span class="letters letters-left">SENSACIONAL RIFA</span>
+      <span class="letters ampersand">EN APOYO A TODOS</span>
+      <span class="letters letters-right">NUESTROS NIÑ@S</span>
+      <span class="line line2"></span>
+    </span>
+  </h1>
+
+  <p class="subtext"></p>
+
+  <div class="countdown">
+
+    <div class="time-box">
+      <span id="days">00</span>
+      <span>Days</span>
+    </div>
+
+    <div class="time-box">
+      <span id="hours">00</span>
+      <span>Hours</span>
+    </div>
+
+    <div class="time-box">
+      <span id="minutes">00</span>
+      <span>Minutes</span>
+    </div>
+
+    <div class="time-box">
+      <span id="seconds">00</span>
+      <span>Seconds</span>
+    </div>
+
+  </div>
+
+  <div class="subscribe">
+    <button id="butt_arte" onclick="window.modal1.showModal();">Juega con la loteria de Boyaca</button>
+  </div>
+
+  <h2 id="message" style="display: none; color: white; margin-top: 31px;">El sorteo del premio de cifras y serie será.
+  </h2></br>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <iframe id="iframe" class="modal-iframe" src=""></iframe>
+    </div>
+  </div>
+
+  <dialog id="modal1" class="modal1">
+    <h3>¡SENSACIONAL RIFA EN APOYO A TODOS NUESTROS NIÑOS Y NIÑAS!</h3>
+    <p>¿Para qué sirve? Pues para recaudar fondos y ayudar a los niños y niñas con proyectos educativos, actividades o
+      necesidades importantes.
+    </p>
+    <h3>Pagar:</h3>
+    <ul>
+      <li>X1: $5.000 (1 número)</li>
+      <li>X2: $10.000 (2 números)</li>
+      <li>X3: $15.000 (3 números)</li>
+      <li>X4: $20.000 (4 números)</li>
+      <li>X5: $25.000 (5 números)</li>
+    </ul>
+    <h3>Resultados finales:</h3>
+    <p>El 5 de abril de 2025 en cifras y series.
+    </p>
+    <div class="modal-buttons">
+      <button class="confirm" type="submit" id="openModalButton"
+        onclick="document.location='about.html'">Aceptar</button>
+      <button class="cancel" type="button" id="cancelBtn" onclick="document.location='index.html'">Cancelar</button>
+    </div>
+    </form>
+  </dialog>
+
+
+
+  <p id="Gana">Ganador a cifras: $1.000.000</p>
+  <div class="wrapper">
+    <div class="display">
+      <div id="time"></div>
+      <div class="circulo">
+        <h2>#</h2>
+        <h2></h2>
+        <h2></h2>
+        <h2></h2>
+      </div>
+    </div>
+  </div>
+
+  <p id="Gana">Ganador de la serie: $500.000</p>
+  <div class="wrapper">
+    <div class="display">
+      <div id="time"></div>
+      <div class="circulo">
+        <h2>#</h2>
+        <h2></h2>
+        <h2></h2>
+        <h2></h2>
+      </div>
+    </div>
+  </div>
+
+
+
+  </main>
+
+
+  <canvas id="confetti-canvas"></canvas>
+  <div id="popup" class="popup hidden">
+    <h2>Launch Time!</h2>
+    <p>Thank you for waiting. We are now live!</p>
+    <button class="btn close-btn" onclick="closePopup()">Close</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/confetti-js@0.0.18/dist/index.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="script.js"></script>
+  <script src="Rifa.js"></script>
+
+</body>
+
+</html>
