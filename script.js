@@ -308,7 +308,7 @@ anime.timeline({
 // CONFETTI FELICIDADES
 // =======================================
 
-/*const confettiSettings = {
+const confettiSettings = {
 
     target: 'confetti-canvas',
 
@@ -348,7 +348,7 @@ anime.timeline({
 const confetti =
 new ConfettiGenerator(confettiSettings);
 
-confetti.render();*/
+confetti.render();
 
 
 // =======================================
